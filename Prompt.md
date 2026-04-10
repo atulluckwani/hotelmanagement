@@ -1,0 +1,4 @@
+I want to create an application for a resturant with multiple food items and drinks. It should have all the food items famous for indian(North/Marathi/Gujarati/south)/chinese/italian cousine.Search for best food items popular across all these cousines and add them. display should follow proper hirarcy as per cousine type.
+Create two types of role Customer/Hotel Manager. customer view that will be allowed to navigate through menu (food item + price) and add them into cart .  For customer login is not necessary. it should give a tracking id to track the order and record for placing the order should be added in database. Hotel Manager should have a login credential and should be able to see order status based on order id or name. 
+Hotel Manager should have access for adding more staff , adding more venues, adding cuisine and modifying menu item.
+Application should be available on zomato/swiggy as well. And also add a payement option mode for user.

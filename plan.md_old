@@ -1,0 +1,46 @@
+## Plan: Restaurant Management and Ordering Application
+
+Develop a web/mobile application for a single restaurant offering food from Indian (North, Marathi, Gujarati, South), Chinese, and Italian cuisines, with customer ordering and admin management features, integrated with Zomato/Swiggy for delivery, and payment gateway support.
+
+**Steps**
+1. **Setup Project Structure**: Initialize frontend (React), backend (Python with FastAPI), and database (MongoDB). Set up authentication for Customer and Restaurant Manager roles.
+2. **Design Database Schema**: Create collections for Users (customers/managers), Cuisines, FoodItems (with prices, descriptions, images), Orders, Payments. Include hierarchy: Cuisines > FoodItems.
+3. **Implement Admin Panel**: Build interface for Restaurant Manager to add/edit/delete cuisines and food items, manage inventory, view orders.
+4. **Develop Customer Interface**: Create menu browsing by cuisine hierarchy, search/filter, add to cart, checkout with payment integration.
+5. **Integrate Zomato/Swiggy APIs**: Implement order placement and delivery tracking via their APIs.
+6. **Add Payment Gateway**: Integrate Razorpay or Stripe for UPI, cards, net banking, wallets.
+7. **Implement Order Management**: Handle dine-in and delivery orders, status updates, notifications.
+8. **Add User Authentication**: Secure login/signup for customers and managers.
+9. **Testing and Validation**: Unit tests for backend, integration tests for frontend-backend, end-to-end for full flow.
+10. **Local Deployment**: Set up local environment for testing (e.g., run frontend on localhost, backend with uvicorn, MongoDB locally). Ensure all components work together.
+11. **Production Deployment**: Decide on platform (AWS/GCP/Azure) later, set up CI/CD pipelines.
+
+**Relevant files**
+- `frontend/src/components/Menu.js` — Customer menu display with cuisine hierarchy
+- `frontend/src/components/AdminPanel.js` — Manager interface for managing cuisines/items
+- `backend/app/models.py` — Database models for cuisines, items, orders
+- `backend/app/routes/orders.py` — Order handling and Zomato/Swiggy integration
+- `backend/app/routes/payments.py` — Payment gateway integration
+
+**Verification**
+1. Test menu display: Ensure items are grouped by cuisine, prices shown, add to cart works.
+2. Test admin functions: Add new cuisine/item, verify in database and UI.
+3. Test ordering: Place order, integrate payment, confirm with gateway.
+4. Test integrations: Simulate Zomato/Swiggy API calls for order delivery.
+5. Performance: Load test with 100 concurrent users, ensure <2s response.
+6. Security: Audit for vulnerabilities, ensure data encryption.
+
+**Decisions**
+- Single restaurant scope, so no multi-tenancy.
+- Support both dine-in and delivery.
+- Integrate Zomato/Swiggy for delivery orders.
+- Payment: Support UPI, cards, net banking, wallets via Razorpay.
+- Tech: React frontend, Python FastAPI backend, MongoDB NoSQL.
+- Cuisines: Indian North (Butter Chicken, Biryani, Naan), Marathi (Vada Pav, Misal Pav), Gujarati (Dhokla, Undhiyu), South (Idli, Dosa), Chinese (Kung Pao Chicken, Dumplings), Italian (Pizza, Pasta).
+- Include drinks: Lassi, Tea, Wine, etc.
+
+**Further Considerations**
+1. Mobile responsiveness: Ensure app works on mobile devices.
+2. Scalability: If restaurant grows, plan for multi-restaurant expansion.
+3. Legal: Ensure compliance with food safety, data privacy (GDPR/CCPA).
+4. Frontend should be in reactjs and backend should be on python with proper implementation on restAPI

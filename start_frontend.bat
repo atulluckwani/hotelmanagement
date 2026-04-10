@@ -1,4 +1,4 @@
 @echo off
-cd /d "c:\surabhi\HotelManagment\frontend"
+cd /d "frontend"
 npm start
 pause
